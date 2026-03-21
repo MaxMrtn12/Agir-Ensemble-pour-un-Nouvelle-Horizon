@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agir Ensemble pour un Nouvel Horizon</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
 
     <style>
-      html, body {
+      html,
+      body {
         margin: 0;
         padding: 0;
         background-color: white;
       }
 
       .navbar {
-        background-color: #343a40 !important;
+        background-color: #202325 !important;
         margin-bottom: 0 !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        padding-top: 12, 5px !important;
+        padding-bottom: 12, 5px !important;
       }
 
       .navbar-toggler-icon {
@@ -34,7 +41,8 @@
         min-height: 500px;
         margin-top: 0;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        padding-top: 0px;
         position: relative;
       }
 
@@ -46,7 +54,7 @@
         }
 
         .navbar-collapse {
-          background-color: #343a40;
+          background-color: #202325;
           padding: 10px;
         }
 
@@ -54,18 +62,29 @@
           flex-direction: row !important;
           gap: 10px !important;
         }
+
+        .hero h1 {
+          font-size: 2rem !important;
+        }
+        .hero p {
+          font-size: 1rem !important;
+        }
       }
     </style>
   </head>
 
   <body>
-
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md" data-bs-theme="dark">
       <div class="container">
         <span class="navbar-brand text-white fw-bold">NOGENTEL 2033</span>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -78,7 +97,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="liste.html">
-                <i class="bi bi-people-fill me-1"></i>Notre liste
+                <i class="bi bi-people-fill me-1"></i>Liste
               </a>
             </li>
             <li class="nav-item">
@@ -93,11 +112,20 @@
 
     <!-- HERO -->
     <div class="hero">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4);"></div>
-      <div class="container position-relative text-white py-5" style="z-index: 1;">
-        <h1 class="fw-bold">AGIR ENSEMBLE</h1>
-        <p class="lead">Pour un Nouvel Horizon</p>
-        <a href="programme.html" class="btn btn-outline-light mt-3">DÉCOUVRIR NOTRE PROGRAMME</a>
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: rgba(0, 0, 0, 0.4)"
+      ></div>
+      <div
+        class="container position-relative text-white py-3 text-center d-flex flex-column align-items-center justify-content-center"
+        style="z-index: 1"
+      >
+        <h1 class="fw-bold" style="font-size: 4rem; color: #ffffff">
+          AGIR ENSEMBLE
+        </h1>
+        <p class="lead" style="font-size: 1.5rem; color: #ffffff">
+          Pour un Nouvel Horizon
+        </p>
       </div>
     </div>
 
