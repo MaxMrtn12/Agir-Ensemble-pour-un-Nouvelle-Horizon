@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agir Ensemble pour un Nouvel Horizon — Municipales 2033</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Nunito:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      :root {
+        --vert1: #2d6a4f;
+        --vert2: #1b4332;
+        --vert3: #52b788;
+        --terre1: #bc6c25;
+        --terre2: #dda15e;
+        --creme1: #fefae0;
+        --creme2: #f5f0e4;
+        --lumiere: #f0f4f0;
+        --gris: #6b7a6e;
+        --sombre: #1c2b22;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        background: #fff;
+        color: var(--sombre);
+        overflow-x: hidden;
+      }
+
+      /* ─── NAVBAR ─── */
+      .navbar {
+        background: var(--vert2);
+        padding:
+          0,
+          8rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1050;
+        border-bottom: 3px solid var(--terre1);
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+      }
+      .navbar-brand {
+        font-family: "Lora", serif;
+        font-size: 1.2rem;
+        color: var(--creme1) !important;
+        line-height: 1.25;
+      }
+      .navbar-brand .village-name {
+        color: var(--terre2);
+        font-weight: 700;
+      }
+      .navbar-brand small {
+        display: block;
+        font-family: "Nunito", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+      }
+      .navbar-toggler {
+        border-color: rgba(221, 161, 94, 0.5);
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(221,161,94,0.9)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+      .nav-link {
+        color: rgba(255, 255, 255, 0.75) !important;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.45rem 1.1rem !important;
+        border-radius: 2rem;
+        transition:
+          background 0.22s,
+          color 0.22s;
+      }
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--terre2) !important;
+      }
+      .nav-link.active {
+        background: var(--terre1);
+        color: #fff !important;
+      }
+
+      /* ─── EN-TETE ─── */
+      .page-header {
+        background:
+          linear-gradient(
+            160deg,
+            rgba(27, 67, 50, 0.9) 0%,
+            rgba(27, 67, 50, 0.75) 100%
+          ),
+          url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80")
+            center/cover no-repeat;
+        padding: 5rem 0 3.5rem;
+        text-align: center;
+        position: relative;
+      }
+      .page-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(transparent, #fff);
+      }
+      .page-header .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--terre2);
+        margin-bottom: 0.6rem;
+      }
+      .page-header h1 {
+        font-family: "Lora", serif;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 700;
+        color: #fff;
+      }
+      .page-header p {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 1rem;
+        max-width: 520px;
+        margin: 1rem auto 0;
+        line-height: 1.7;
+      }
+      .divider {
+        width: 50px;
+        height: 3px;
+        background: var(--terre1);
+        border-radius: 2px;
+        margin: 1rem auto;
+      }
+      .divider.light {
+        background: var(--terre2);
+      }
+
+      /* ─── TÊTE DE LISTE ─── */
+      .tete-section {
+        padding: 5rem 0 2.5rem;
+        background: #fff;
+      }
+      .tete-wrap {
+        background: linear-gradient(135deg, var(--creme2) 0%, #fff 100%);
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(45, 106, 79, 0.13);
+        border: 1px solid rgba(45, 106, 79, 0.1);
+        max-width: 860px;
+        margin: auto;
+      }
+      .tete-wrap img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+      }
+      @media (min-width: 768px) {
+        .tete-wrap {
+          display: flex;
+        }
+        .tete-wrap img {
+          width: 340px;
+          height: auto;
+          flex-shrink: 0;
+        }
+      }
+      .tete-body {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .tete-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: var(--terre1);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.3rem 1rem;
+        border-radius: 2rem;
+        margin-bottom: 1.2rem;
+        width: fit-content;
+      }
+      .tete-body h3 {
+        font-family: "Lora", serif;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: var(--sombre);
+        margin-bottom: 0.4rem;
+      }
+      .tete-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 1.2rem;
+      }
+      .tete-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.88rem;
+        color: var(--gris);
+        font-weight: 600;
+      }
+      .tete-body p {
+        font-size: 0.97rem;
+        color: #555;
+        line-height: 1.8;
+      }
+
+      /* ─── GRILLE CANDIDATS ─── */
+      .liste-section {
+        padding: 2rem 0 5rem;
+        background: var(--creme2);
+      }
+      .liste-section h2 {
+        font-family: "Lora", serif;
+        font-size: clamp(1.5rem, 2.8vw, 2rem);
+        color: var(--sombre);
+      }
+      .cand-card {
+        background: #fff;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        box-shadow: 0 3px 16px rgba(45, 106, 79, 0.09);
+        border: 1px solid rgba(45, 106, 79, 0.08);
+        transition:
+          transform 0.26s,
+          box-shadow 0.26s;
+        height: 100%;
+      }
+      .cand-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(45, 106, 79, 0.16);
+      }
+      .cand-img-wrap {
+        position: relative;
+        height: 210px;
+        overflow: hidden;
+      }
+      .cand-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.4s;
+      }
+      .cand-card:hover .cand-img-wrap img {
+        transform: scale(1.06);
+      }
+      .num {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        background: var(--vert2);
+        color: var(--terre2);
+        font-family: "Lora", serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      }
+      .cand-body {
+        padding: 1.2rem;
+      }
+      .cand-body h5 {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        color: var(--sombre);
+        margin-bottom: 0.2rem;
+      }
+      .cand-metier {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--terre1);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.35rem;
+      }
+      .cand-age {
+        font-size: 0.8rem;
+        color: var(--gris);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: var(--vert2);
+        color: rgba(255, 255, 255, 0.5);
+        padding: 2.5rem 0;
+        font-size: 0.85rem;
+        text-align: center;
+        border-top: 3px solid var(--terre1);
+      }
+      footer a {
+        color: var(--terre2);
+        text-decoration: none;
+      }
+      .footer-logo {
+        font-family: "Lora", serif;
+        color: var(--creme1);
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+      }
+
+      /* ─── MODALS LÉGAUX ─── */
+      .modal-legal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(27, 67, 50, 0.55);
+        backdrop-filter: blur(3px);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+      .modal-legal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .modal-legal-box {
+        background: #fff;
+        border-radius: 1.4rem;
+        max-width: 680px;
+        width: 100%;
+        max-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        border-top: 4px solid var(--terre1);
+        transform: translateY(20px);
+        transition: transform 0.25s;
+      }
+      .modal-legal-overlay.open .modal-legal-box {
+        transform: translateY(0);
+      }
+      .modal-legal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.4rem 1.8rem;
+        border-bottom: 1px solid var(--creme2);
+      }
+      .modal-legal-head h5 {
+        font-family: "Lora", serif;
+        font-size: 1.15rem;
+        color: var(--sombre);
+        margin: 0;
+      }
+      .modal-legal-close {
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: var(--gris);
+        cursor: pointer;
+        line-height: 1;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.4rem;
+        transition: background 0.2s;
+      }
+      .modal-legal-close:hover {
+        background: var(--creme2);
+      }
+      .modal-legal-body {
+        overflow-y: auto;
+        padding: 1.8rem;
+        flex: 1;
+      }
+      .modal-legal-body h6 {
+        font-family: "Lora", serif;
+        font-size: 1rem;
+        color: var(--vert2);
+        margin: 1.4rem 0 0.5rem;
+      }
+      .modal-legal-body h6:first-child {
+        margin-top: 0;
+      }
+      .modal-legal-body p,
+      .modal-legal-body li {
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.8;
+      }
+      .modal-legal-body ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .modal-legal-foot {
+        padding: 1rem 1.8rem;
+        border-top: 1px solid var(--creme2);
+        display: flex;
+        justify-content: flex-end;
+      }
+      .btn-legal-ok {
+        background: var(--vert2);
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        padding: 0.5rem 1.8rem;
+        font-weight: 700;
+        font-size: 0.88rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-legal-ok:hover {
+        background: var(--vert1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="village-name">NOGENTEL</span> 2033
+          <small>Élections Municipales</small>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="nav">
+          <ul class="navbar-nav gap-1">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="liste.html">Liste</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="programme.html">Programme</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="resultats.html">Résultats</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:contact@nogentel2033.fr"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- EN-TETE -->
+    <div class="page-header">
+      <div class="container position-relative" style="z-index: 1">
+        <div class="eyebrow">
+          <i class="bi bi-people-fill me-1"></i>Municipales 2033
+        </div>
+        <h1>Notre Liste</h1>
+        <div class="divider light"></div>
+        <p>
+          15 habitantes et habitants de notre village, engagés pour leur
+          commune, à votre service pendant 6 ans.
+        </p>
+      </div>
+    </div>
+
+    <!-- TÊTE DE LISTE -->
+    <section class="tete-section">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="eyebrow" style="color: var(--terre1)">Candidat·e n°1</p>
+          <h2
+            style="
+              font-family: &quot;Lora&quot;, serif;
+              font-size: clamp(1.5rem, 2.8vw, 2rem);
+              color: var(--sombre);
+            "
+          >
+            Tête de liste
+          </h2>
+        </div>
+        <div class="tete-wrap">
+          <img src="image/Damien Martin.jpg" alt="Tête de liste" />
+          <div class="tete-body">
+            <span class="tete-badge"
+              ><i class="bi bi-star-fill"></i> Tête de liste</span
+            >
+            <h3>Damien MARTIN</h3>
+            <div class="tete-meta">
+              <span
+                ><i class="bi bi-briefcase text-success"></i>
+                Fraiseur-Tourneur</span
+              >
+              <span><i class="bi bi-calendar2 text-success"></i> 56 ans</span>
+              <span
+                ><i class="bi bi-geo-alt text-success"></i> Habitante depuis 56
+                ans</span
+              >
+            </div>
+            <p>
+              Impliquée dans la vie du village depuis plus de 20 ans —
+              présidente de l'association des parents d'élèves, bénévole aux
+              Restos du Cœur locaux et membre fondatrice du comité des fêtes —
+              Marie Fontaine connaît chaque recoin de notre commune et
+              l'ensemble de ses habitants. Elle porte ce projet avec
+              enthousiasme et humilité.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRILLE CANDIDATS -->
+    <section class="liste-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow" style="color: var(--terre1)">
+            Candidat·es n°2 à 15
+          </p>
+          <h2>L'ensemble de notre équipe</h2>
+          <div
+            class="divider"
+            style="margin-left: auto; margin-right: auto"
+          ></div>
+        </div>
+        <div class="row g-3 g-md-4 justify-content-center">
+          <!-- 2 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">2</div>
+              </div>
+              <div class="cand-body">
+                <h5>Angélique DEL FABRO GUICHE</h5>
+                <div class="cand-metier">Dessinatrice Industrielle</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 49 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">3</div>
+              </div>
+              <div class="cand-body">
+                <h5>Jean-Michel ROGÉ</h5>
+                <div class="cand-metier">Retraité</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 68 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">4</div>
+              </div>
+              <div class="cand-body">
+                <h5>Véronique DART</h5>
+                <div class="cand-metier">Assistante de Direction</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 64 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">5</div>
+              </div>
+              <div class="cand-body">
+                <h5>Jérome LEBLOND</h5>
+                <div class="cand-metier">Opérateur dans l'Industrie</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 64 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">6</div>
+              </div>
+              <div class="cand-body">
+                <h5>Stéphanie PATAT</h5>
+                <div class="cand-metier">Traiteur</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 54 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">7</div>
+              </div>
+              <div class="cand-body">
+                <h5>Yann LAFONT</h5>
+                <div class="cand-metier">Concépteur Paysagiste</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 33 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">8</div>
+              </div>
+              <div class="cand-body">
+                <h5>Christelle LE-CORGUILLÉ</h5>
+                <div class="cand-metier">Préparatrice en Pharmacie</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 52 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">9</div>
+              </div>
+              <div class="cand-body">
+                <h5>Philippe TRANCHANT</h5>
+                <div class="cand-metier">Retraité</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 72 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">10</div>
+              </div>
+              <div class="cand-body">
+                <h5>Nathalie BOSSANT</h5>
+                <div class="cand-metier">Conductrice de Taxi</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 66 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">11</div>
+              </div>
+              <div class="cand-body">
+                <h5>Christian STACHOWIAK</h5>
+                <div class="cand-metier">Ingénieur d'Affaires</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 59 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">12</div>
+              </div>
+              <div class="cand-body">
+                <h5>Catherine BERNIER</h5>
+                <div class="cand-metier">Retraitée</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 71 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">13</div>
+              </div>
+              <div class="cand-body">
+                <h5>Didier CRASNIER</h5>
+                <div class="cand-metier">Retraité</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 71 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">14</div>
+              </div>
+              <div class="cand-body">
+                <h5>Lina REITZ</h5>
+                <div class="cand-metier">Retraitée</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 90 ans
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 15 -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="cand-card">
+              <div class="cand-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                  alt="Thomas Bernard"
+                />
+                <div class="num">15</div>
+              </div>
+              <div class="cand-body">
+                <h5>Bruno LOUCHET</h5>
+                <div class="cand-metier">Boucher</div>
+                <div class="cand-age">
+                  <i class="bi bi-calendar2"></i> 66 ans
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-logo">Agir Ensemble pour un Nouvel Horizon</div>
+        <p>
+          Liste citoyenne — Élections Municipales 2033 · Village de 1 106
+          habitants
+        </p>
+        <p class="mt-2">
+          <a
+            href="#"
+            onclick="
+              openModal('modalMentions');
+              return false;
+            "
+            >Mentions légales</a
+          >
+          &nbsp;·&nbsp;
+          <a
+            href="#"
+            onclick="
+              openModal('modalRgpd');
+              return false;
+            "
+            >RGPD</a
+          >
+        </p>
+        <p class="mt-3" style="font-size: 0.75rem">
+          © Agir Ensemble pour un Nouvel Horizon — Tous droits réservés
+        </p>
+      </div>
+    </footer>
+
+    <!-- MODAL MENTIONS LÉGALES -->
+    <div
+      class="modal-legal-overlay"
+      id="modalMentions"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-legal-box">
+        <div class="modal-legal-head">
+          <h5>
+            <i class="bi bi-file-text me-2" style="color: var(--terre1)"></i
+            >Mentions légales
+          </h5>
+          <button
+            class="modal-legal-close"
+            onclick="closeModal('modalMentions')"
+            aria-label="Fermer"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-legal-body">
+          <h6>Éditeur du site</h6>
+          <p>
+            Ce site est édité par la liste
+            <strong>Agir Ensemble pour un Nouvel Horizon</strong>, liste
+            citoyenne candidate aux élections municipales de 2033 dans la
+            commune de Nogentel.
+          </p>
+          <p>
+            Responsable de publication : Damien MARTIN, tête de liste.<br />Contact
+            :
+            <a href="mailto:contact@nogentel2033.fr" style="color: var(--vert1)"
+              >contact@nogentel2033.fr</a
+            >
+          </p>
+
+          <h6>Hébergement</h6>
+          <p>
+            Ce site est hébergé par un prestataire tiers. Les coordonnées de
+            l'hébergeur sont disponibles sur simple demande.
+          </p>
+
+          <h6>Propriété intellectuelle</h6>
+          <p>
+            L'ensemble des contenus présents sur ce site (textes, images,
+            graphismes) sont la propriété exclusive de la liste Agir Ensemble
+            pour un Nouvel Horizon, sauf mention contraire. Toute reproduction
+            est interdite sans autorisation préalable.
+          </p>
+
+          <h6>Limitation de responsabilité</h6>
+          <p>
+            Les informations diffusées sur ce site sont fournies à titre
+            indicatif. La liste ne saurait être tenue responsable des erreurs ou
+            omissions éventuelles.
+          </p>
+        </div>
+        <div class="modal-legal-foot">
+          <button class="btn-legal-ok" onclick="closeModal('modalMentions')">
+            J'ai compris
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL RGPD -->
+    <div
+      class="modal-legal-overlay"
+      id="modalRgpd"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-legal-box">
+        <div class="modal-legal-head">
+          <h5>
+            <i class="bi bi-shield-check me-2" style="color: var(--terre1)"></i
+            >RGPD &amp; Données personnelles
+          </h5>
+          <button
+            class="modal-legal-close"
+            onclick="closeModal('modalRgpd')"
+            aria-label="Fermer"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-legal-body">
+          <h6>Données collectées</h6>
+          <p>
+            Ce site est un site vitrine statique.
+            <strong>Aucune donnée personnelle n'est collectée</strong> par la
+            liste Agir Ensemble pour un Nouvel Horizon via ce site.
+          </p>
+
+          <h6>Cookies</h6>
+          <p>
+            Ce site n'utilise aucun cookie de traçage ou de publicité. Des
+            cookies techniques peuvent être déposés par les services tiers
+            suivants :
+          </p>
+          <ul>
+            <li>
+              Google Fonts (polices d'écriture) — politique disponible sur
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                style="color: var(--vert1)"
+                >policies.google.com</a
+              >
+            </li>
+            <li>
+              jsDelivr CDN (ressources Bootstrap) — aucune donnée personnelle
+              collectée
+            </li>
+            <li>Unsplash (images) — aucune donnée personnelle collectée</li>
+          </ul>
+
+          <h6>Vos droits</h6>
+          <p>
+            Conformément au Règlement Général sur la Protection des Données
+            (RGPD), vous disposez des droits suivants :
+          </p>
+          <ul>
+            <li>Droit d'accès à vos données</li>
+            <li>Droit de rectification</li>
+            <li>Droit à l'effacement</li>
+            <li>Droit d'opposition au traitement</li>
+          </ul>
+          <p>
+            Pour exercer ces droits, contactez-nous à :
+            <a href="mailto:contact@nogentel2033.fr" style="color: var(--vert1)"
+              >contact@nogentel2033.fr</a
+            >
+          </p>
+
+          <h6>Autorité de contrôle</h6>
+          <p>
+            En cas de litige, vous pouvez saisir la
+            <a
+              href="https://www.cnil.fr"
+              target="_blank"
+              style="color: var(--vert1)"
+              >CNIL</a
+            >
+            (Commission Nationale de l'Informatique et des Libertés).
+          </p>
+        </div>
+        <div class="modal-legal-foot">
+          <button class="btn-legal-ok" onclick="closeModal('modalRgpd')">
+            J'ai compris
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.querySelectorAll(".modal-legal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", function (e) {
+          if (e.target === this) closeModal(this.id);
+        });
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".modal-legal-overlay.open")
+            .forEach((m) => closeModal(m.id));
+        }
+      });
+    </script>
+
+    <!-- BOUTON RETOUR EN HAUT -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      style="
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--terre1);
+        color: #fff;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(188, 108, 37, 0.4);
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        z-index: 1040;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+      aria-label="Retour en haut"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script>
+      const btn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          btn.style.opacity = "1";
+          btn.style.transform = "translateY(0)";
+        } else {
+          btn.style.opacity = "0";
+          btn.style.transform = "translateY(10px)";
+        }
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
